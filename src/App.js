@@ -5,13 +5,17 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+        
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          Welcome To ClimeLine.
         </p>
+        <p>
+          An Interactive interface where you can see the effects a various climate bills
+        </p>
+        <img src="https://www.climate.gov/sites/default/files/styles/embedded_gif/public/2022-05/Screen%20Shot%202022-05-13%20at%204.05.00%20PM.png?itok=aw1T98fq" className="App-logo" alt="logo" />
         <a
           className="App-link"
-          href="https://reactjs.org"
+          href="https://reacjs.org"
           target="_blank"
           rel="noopener noreferrer"
         >
