@@ -1,6 +1,7 @@
 <html>
 <script type="text/javascript">
-   var multiplyer= 300;
+   var m= 1;
+   var a=0;
    
    
    
@@ -11,10 +12,22 @@ zoomEnabled: true,
 title:{
 text: "Co2 Emissions by year"
 },
+axisX:{     
+         labelFormatter: function(e){
+				return  e.value;
+			}
+        },
+axis:{     
+         labelFormatter: function(e){
+				return e.value*m+c +"mMMt";
+			}
+ },
 data: [
 {
 type: "area",
-xValueType: "String",
+
+
+
 dataPoints: [
     
     
@@ -24,7 +37,7 @@ dataPoints: [
     { x: 2013, y :5344.5545},
     { x: 2014, y :5401.6867},
     { x: 2015, y :5251.3557},
-    { x: 2016, y :(5158.8624*multiplyer)},
+    { x: 2016, y :5158.8624},
     { x: 2017, y :5119.4868},
     { x: 2018, y :5269.8881},
     { x: 2019, y :5130.5859},
@@ -65,9 +78,8 @@ dataPoints: [
 });
 
 
-
 c.render();
-c.get("data").foreach(logArrayElements);
+
 }
 </script>
 <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
