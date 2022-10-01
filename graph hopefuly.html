@@ -1,36 +1,12 @@
 <html>
 <script type="text/javascript">
-   var m= 1;
-   var a=0;
+ 
    
    
    
 window.onload = function () {
-var c = new CanvasJS.Chart("first",
-{
-zoomEnabled: true,
-title:{
-text: "Co2 Emissions by year"
-},
-axisX:{     
-         labelFormatter: function(e){
-				return  e.value;
-			}
-        },
-axis:{     
-         labelFormatter: function(e){
-				return e.value*m+c +"mMMt";
-			}
- },
-data: [
-{
-type: "area",
-
-
-
-dataPoints: [
-    
-    
+    //this is the array of data points
+var dps = [
     { x: 2010, y :5573.1706},
     { x: 2011, y :5434.1628},
     { x: 2012, y :5217.1308},
@@ -70,14 +46,50 @@ dataPoints: [
     { x:2047 , y :4714.6283},
     { x:2048 , y :4742.219},
     { x:2049 , y :4768.1163},
-    { x:2050 , y :4795.6089}
-    
-]
+    { x:2050 , y :4795.6089}];
+     //datapoints million mega tones co2 per year
+
+     //this is the graph object it takes the data points and makes a graph
+var c = new CanvasJS.Chart("first",
+{
+zoomEnabled: true,
+title:{
+text: "Co2 Emissions by year"
+},
+//this formats the x axis
+axisX:{     
+         labelFormatter: function(e){
+		 //takes e.value(the value meant to be displayed(a number) and returns it as a string.
+				return  e.value;
+			}
+        },
+//this formats the y axis
+axisY:{     
+         labelFormatter: function(e){
+				return (e.value) +"MMMt";
+			}
+ },
+data: [
+{
+type: "line",
+	//formats the data as number number number number ex 12345 instead of 12,345.
+xValueFormatString: "#####",
+
+dataPoints: dps
 }
 ]
 });
 
+//this function controls how the data is edited
+var updateChart = function(){
+ for(i=0; i<dps.length; i++){
+    dps[i].y=dps[i].y*1;
+ };
+}
 
+//this runs the function
+updateChart();
+//and updates the chart
 c.render();
 
 }
