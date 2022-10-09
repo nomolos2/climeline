@@ -31,6 +31,7 @@ var dps = [
     { x:2031 , y :4559.9913},
     { x:2032 , y :4547.4693},
     { x:2033 , y :4547.2663},
+    { x:2034 , y :4554.4186},
     { x:2035 , y :4542.0345},
     { x:2036 , y :4548.3172},
     { x:2037 , y :4552.7192},
@@ -46,7 +47,8 @@ var dps = [
     { x:2047 , y :4714.6283},
     { x:2048 , y :4742.219},
     { x:2049 , y :4768.1163},
-    { x:2050 , y :4795.6089}];
+    { x:2050 , y :4795.6089}
+];
      //datapoints million mega tones co2 per year
 
      //this is the graph object it takes the data points and makes a graph
@@ -66,7 +68,7 @@ axisX:{
 //this formats the y axis
 axisY:{     
          labelFormatter: function(e){
-				return (e.value) +"MMMt";
+				return (e.value) +"MMt";
 			}
  },
 data: [
@@ -80,15 +82,53 @@ dataPoints: dps
 ]
 });
 
-//this function controls how the data is edited
-var updateChart = function(){
- for(i=0; i<dps.length; i++){
-    dps[i].y=dps[i].y*1;
+//Infrastructure Investment and Jobs Act or iI(infastructure investment)
+//removes 284 tones of carbon over the course of 12 years
+var iI = function(x){
+    for(i=0;i<dps.length;i++){
+        if(i>=x&&i<=x+12){
+        dps[i].y=dps[i].y-(284/12)*(i-x);
+        };
+        if(i>x+12){
+            dps[i].y =dps[i].y -284;
+        };
  };
+}
+//Safer Affordable Fuel-Efficient vehicals(Safe)
+var Safe = function(x){
+    for(i=0;i<dps.length;i++){
+        if(i>=x&&i<=x+12){
+        dps[i].y=dps[i].y-(270/12)*(i-x);
+        };
+        if(i>x+12){
+            dps[i].y =dps[i].y -270;
+        };
+};
+}
+
+//Inflation Reduction act(iR)
+//reduces it by 40% over the course of 25 years
+var iR = function(x){
+    for(i=0; i<dps.length; i++){
+        if(i>=x&&i<=x+25){
+        dps[i].y=dps[i].y*Math.pow(0.60,(i-x)/25);
+        
+        };
+        if(i>x+25){
+            dps[i].y =dps[i].y*.6;
+        };
+    }
 }
 
 //this runs the function
-updateChart();
+
+//Infrastructure Investment and Jobs Act with input for years after 2010
+//iI();
+
+//iR(0);
+
+//Safe(0);
+
 //and updates the chart
 c.render();
 
