@@ -1,12 +1,9 @@
-import logo from './logo.svg';
 import './App.css';
 import Button from '@mui/material/Button';
 import ButtonGroup from '@mui/material/ButtonGroup';
 import Box from '@mui/material/Box';
 import React, {useState} from 'react';
 import CanvasJSReact from './canvasjs.react';
-//var CanvasJSReact = require('./canvasjs.react');
-var CanvasJS = CanvasJSReact.CanvasJS;
 var CanvasJSChart = CanvasJSReact.CanvasJSChart;
 
 var updateChart = function(options) {
