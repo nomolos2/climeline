@@ -31,7 +31,7 @@ var tempOptions= new CanvasJS.Chart("second",
 {
 zoomEnabled: true,
 title:{
-text: "Co2 Emissions after 2010"
+text: "Total Co2 Emissions after 2010"
 },
 theme:"dark1",
 axisX:{     
