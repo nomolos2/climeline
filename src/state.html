@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>contact</title>
+</head>
+
+<style>
+    .dropbtn {
+    background-color: #844caf;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    min-width: 100px;
+    border: none;
+    cursor: pointer;
+    }
+    
+    .dropbtn {
+        transition-duration: 0.4s;
+    }
+    
+    .dropbtn:hover {
+        background-color: #663e8e;
+        color: white;
+    }
+
+</style>
+
+<body>
+<h1>Contact Your Senators From <span id="state"></span></h1>
+
+<h3><span id="name1"></span></h3>
+<h5>Party: <span id="party1"></span></h5>
+<h5>Phone: <span id="phone1"></span></h5>
+<h5>Website: <span id="website1"></span></h5>
+<button class="dropbtn" onclick="goTo(1)">Website</button>
+
+
+<h3><span id="name2"></span></h3>
+<h5>Party: <span id="party2"></span></h5>
+<h5>Phone: <span id="phone2"></span></h5>
+<h5>Website: <span id="website2"></span></h5>
+<button class="dropbtn" onclick="goTo(2)">Website</button>
+
+</body>
+
+<script>
+const info1 = localStorage.getItem('info1');
+const info2 = localStorage.getItem('info2');
+console.log(info1);
+console.log(info2);
+
+
+const array1 = info1.split(",");
+const array2 = info2.split(",");
+
+for (i=0; i<array1.length; i++){
+    if (i == 0){
+        document.getElementById("state").innerHTML = array1[i];
+    }
+    if (i == 1){
+        document.getElementById("name1").innerHTML = array1[i];
+    }
+    if (i == 2){
+        document.getElementById("party1").innerHTML = array1[i];
+    }
+    if (i == 3){
+        document.getElementById("phone1").innerHTML = array1[i];
+    }
+    if (i == 4){
+        var website1 = array1[i];
+        document.getElementById("website1").innerHTML = array1[i];
+    }
+}
+
+for (i=0; i<array2.length; i++){
+    if (i == 1){
+        document.getElementById("name2").innerHTML = array2[i];
+    }
+    if (i == 2){
+        document.getElementById("party2").innerHTML = array2[i];
+    }
+    if (i == 3){
+        document.getElementById("phone2").innerHTML = array2[i];
+    }
+    if (i == 4){
+        var website2 = array2[i];
+        document.getElementById("website2").innerHTML = array2[i];
+    }
+}
+
+function goTo(num){
+    if (num == 1){
+        window.open(website1, "_blank");
+    }
+    else{
+        window.open(website2, "_blank");
+    }
+}
+
+
+</script>
+
+</html>
