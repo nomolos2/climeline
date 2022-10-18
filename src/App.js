@@ -25,11 +25,45 @@ var policyEffect = function(x,options,reduction,years) {
   newOptions.data[0].dataPoints = dps;
   return newOptions;
 }
+function policyOption(i) {
+  const policyOptions = [
+    {
+      shortName: 'SAFE Vehicle Rule',
+      name: "The Safer Affordable Fuel-Efficient (SAFE) Vehicles Rule",
+      url: "https://www.nhtsa.gov/corporate-average-fuel-economy/safe",
+      description: "need description",
+      reduction: 284,
+      years: 12,
+    },
+    {
+      shortName: "Inflation Reduction Act",
+      name: "Inflation Reduction Act and Bipartisan Infrastructure Law",
+      url: "https://www.eesi.org/articles/view/how-the-inflation-reduction-act-and-bipartisan-infrastructure-law-work-together-to-advance-climate-action",
+      description: "The Inflation Reduction Act aims to reduce the federal deficit, lower healthcare costs, and make the tax code fairer, while also reducing impacts from climate change. This bill includes $369 billion in funding for clean technology manufacturing facilities, energy research, carbon capture, climate-smart agriculture practices, and environmental justice initiatives. The National Highway Traffic Safety Administration and Environmental Protection Agency issued the Safer Affordable Fuel-Efficient (SAFE) Vehicles Rule, which reduces the standards for greenhouse gas emissions for passenger cars and light trucks by 1.5% each year for model years 2021–2026.",
+      reduction: 1150,
+      years: 25,
+    },
+    {
+      shortName: "Infrastructure Investment and Job Act",
+      name: "The Infrastructure Investment and Jobs Act",
+      url: "https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwiNm5WXpuX6AhWApokEHQMrAoEQFnoECAgQAw&url=https%3A%2F%2Ftransportation.house.gov%2Fcommittee-activity%2Fissue%2Finfrastructure-investment-and-jobs-act&usg=AOvVaw08fe_yzAEji9yZUIa3jSV6",
+      description:
+          `The Infrastructure Investment and Jobs Act plans to improve roads, bridges, transit, rail, ports, airports, broadband, and
+           drinking water and wastewater infrastructure. It provides 15 billion dollars for electric vehicle charging and clean school buses
+           and ferries, as well as hundreds of billions for improving public transportation, which will reduce carbon emissions from cars
+           over time for supporting America's goal of net-zero emissions by 2050`,
+      reduction: 270,
+      years: 12,
+    },
+  ]
+  return policyOptions[i];
+}
 
 const marks = [2010, 2020, 2030, 2040, 2050].map(d => ({value: d, label: (d.toString())}))
 function App() {
   const [options, setOptions] = useState(initialOptions(initialDataPts()));
   const [startYear, setStartYear] = useState(2010);
+  const [optionChosen, setOptionChosen] = useState(0);
 
   return (
     <div className="App">
@@ -50,16 +84,21 @@ function App() {
             orientation="horizontal"
             aria-label="horizontal outlined button group"
           >
-            <Button onClick= { () => {
-              setOptions(policyEffect(startYear,options,284,12));
-             }} >SAFE Vehicles Rule</Button>
-             <Button onClick= { () => {
-              setOptions(policyEffect(startYear,options,1150,25));
-             }} >Inflation Reduction Act</Button>
-             <Button onClick= { () => {
-              setOptions(policyEffect(startYear,options,270,12));
-             }} >Infrastructure Investment and Job Act</Button>
+            {
+              [0,1,2].map((i) => {
+                const po = policyOption(i)
+                return  <Button key={i} onClick= { () => {
+                          setOptionChosen(i);
+                          setOptions(policyEffect(startYear, options, po.reduction, po.years));
+                         }} >{po.shortName}</Button>
+              })
+            }
           </ButtonGroup>
+          <ButtonGroup orientation="horizontal" aria-label="horizontal outlined button group" >
+            <Button key={'s'} onClick= { () => {
+            }} >Contact senator</Button>
+          </ButtonGroup>
+          {senatorButton()}
         </Box>
         <div style={{display: 'flex', flexDirection: 'row', flexWrap: 'wrap', width: '100%', }}>
           <div style={{minWidth: '60vw', margin: '20px'}}>
@@ -79,8 +118,14 @@ function App() {
               />
             </Box>
           </div>
-          <div style={{color: 'black', border: '1px solid green', width: '300px', height: '200px', margin: '20px', }}>
-            <strong>Start year for policy changes: {startYear}</strong>
+          <div style={{
+              color: 'black', border: '1px solid green',
+              width: '300px', margin: '10px',
+              padding: '10px',
+              fontSize: '20px',
+          }}>
+            <strong>{policyOption(optionChosen).name} starting {startYear}</strong>
+            <p style={{textAlign: 'left', bottomPadding: '0px', }}>{policyOption(optionChosen).description}</p>
           </div>
         </div>
       </div>
@@ -172,6 +217,72 @@ function initialDataPts(cumulative=false) {
     };
   }
   return dps;
+}
+function senatorButton() {
+  return "get the senator thing working";
+  return (
+    <div className="dropdown">
+      <button className="dropbtn" type="button" /* onMouseOver="showForm()" */ >Contact Senator</button>
+      <form id="formElement" /* method="GET" */ style={{display:'none'}}>
+        <label htmlFor="states">
+          <h5>
+            <center>Choose your state:</center>
+          </h5>
+        </label>
+        <select name="states" id="state" value="value">
+          <option value="Alabama">Alabama</option>
+          <option value="Alaska">Alaska</option>
+          <option value="Arizona">Arizona</option>
+          <option value="Arkansas">Arkansas</option>
+          <option value="California">California</option>
+          <option value="Colorado">Colorado</option>
+          <option value="Connecticut">Connecticut</option>
+          <option value="Delaware">Delaware</option>
+          <option value="Florida">Florida</option>
+          <option value="Georgia">Georgia</option>
+          <option value="Hawaii">Hawaii</option>
+          <option value="Idaho">Idaho</option>
+          <option value="Illinois">Illinois</option>
+          <option value="Indiana">Indiana</option>
+          <option value="Iowa">Iowa</option>
+          <option value="Kansas">Kansas</option>
+          <option value="Kentucky">Kentucky</option>
+          <option value="Louisiana">Louisiana</option>
+          <option value="Maine">Maine</option>
+          <option value="Maryland">Maryland</option>
+          <option value="Massachusetts">Massachusetts</option>
+          <option value="Michigan">Michigan</option>
+          <option value="Minnesota">Minnesota</option>
+          <option value="Mississippi">Mississippi</option>
+          <option value="Missouri">Missouri</option>
+          <option value="Montana">Montana</option>
+          <option value="Nebraska">Nebraska</option>
+          <option value="Nevada">Nevada</option>
+          <option value="New Hampshire">New Hampshire</option>
+          <option value="New Jersey">New Jersey</option>
+          <option value="New Mexico">New Mexico</option>
+          <option value="New York">New York</option>
+          <option value="North Carolina">North Carolina</option>
+          <option value="North Dakota">North Dakota</option>
+          <option value="Ohio">Ohio</option>
+          <option value="Oklahoma">Oklahoma</option>
+          <option value="Oregon">Oregon</option>
+          <option value="Pennsylania">Pennsylvania</option>
+          <option value="Rhode Island">Rhode Island</option>
+          <option value="South Carolina">South Carolina</option>
+          <option value="South Dakota">South Dakota</option>
+          <option value="Tennessee">Tennessee</option>
+          <option value="Texas">Texas</option>
+          <option value="Utah">Utah</option>
+          <option value="Vermont">Vermont</option>
+          <option value="Virginia">Virginia</option>
+          <option value="Washington">Washington</option>
+          <option value="West Virginia">West Virginia</option>
+          <option value="Wisconsin">Wisconsin</option>
+        </select>
+        <button className="dropbtn" type="button" onClick={() => alert("set up getChoice function")} >Submit</button>
+      </form>
+    </div>)
 }
 
 export default App;

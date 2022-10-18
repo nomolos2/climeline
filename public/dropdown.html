@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  .dropbtn {
+    background-color: #844caf;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    min-width: 120px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropbtn {
+  transition-duration: 0.4s;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 600px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/*.dropdown-content a:hover {background-color: #f1f1f1}*/
+
+.dropdown:hover .dropdown-content {
+    display: block;
+    position: absolute;
+    left: 100%;
+    top: 0;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #663e8e;
+}
+
+form {
+  border : 1px solid #844caf;
+  max-width: 118px;
+}
+
+select {
+  width: 100%;
+  padding: 10px 12px;
+  border: none;
+  border-radius: 2px;
+  background-color: #f1f1f1;
+}
+</style>
+</head>
+<body>
+
+<div class="dropdown">
+  <button class="dropbtn">Policy 1</button>
+  <div class="dropdown-content">
+    <a href="https://www.nhtsa.gov/corporate-average-fuel-economy/safe" target ="_blank"> <h3>The Safer Affordable Fuel-Efficient (SAFE) Vehicles Rule</h3>
+      <h5><br>The Inflation Reduction Act aims to reduce the federal deficit, lower healthcare costs, and make the tax code fairer, while also 
+        reducing impacts from climate change. This bill includes $369 billion in funding for clean technology manufacturing facilities, 
+        energy research, carbon capture, climate-smart agriculture practices, and environmental justice initiatives. The National Highway
+         Traffic Safety Administration and Environmental Protection Agency issued the Safer Affordable Fuel-Efficient (SAFE) Vehicles 
+         Rule, which reduces the standards for greenhouse gas emissions for passenger cars and light trucks by 1.5% each year for model 
+         years 2021–2026.</h5></a>
+  </div>
+</div>
+<br>
+<div class="dropdown">
+  <button class="dropbtn">Policy 2</button>
+  <div class="dropdown-content">
+    <a href="https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwiNm5WXpuX6AhWApokEHQMrAoEQFnoECAgQAw&url=https%3A%2F%2Ftransportation.house.gov%2Fcommittee-activity%2Fissue%2Finfrastructure-investment-and-jobs-act&usg=AOvVaw08fe_yzAEji9yZUIa3jSV6" target="_blank"><h3>The Infrastructure Investment and Jobs Act</h3>
+      <h5><br>The Infrastructure Investment and Jobs Act plans to improve roads, bridges, transit, rail, ports, airports, broadband, and
+       drinking water and wastewater infrastructure. It provides 15 billion dollars for electric vehicle charging and clean school buses
+       and ferries, as well as hundreds of billions for improving public transportation, which will reduce carbon emissions from cars 
+       over time for supporting America's goal of net-zero emissions by 2050</h6></a>
+  </div>
+</div>
+<br>
+<div class="dropdown">
+  <button class="dropbtn">Policy 3</button>
+  <div class="dropdown-content">
+    <a href="https://www.eesi.org/articles/view/how-the-inflation-reduction-act-and-bipartisan-infrastructure-law-work-together-to-advance-climate-action" target="_blank"><h3>Inflation Reduction Act and Bipartisan Infrastructure Law</h3>
+    <h5>The Inflation Reduction Act aims to reduce the federal deficit, lower healthcare costs, and make the tax code fairer, while also
+       reducing impacts from climate change. This bill includes $369 billion in funding for clean technology manufacturing facilities, 
+       energy research, carbon capture, climate-smart agriculture practices, and environmental justice initiatives. The bill’s climate 
+       provisions are projected to reduce the country’s carbon emissions by roughly 40% by 2030 by approximately 1,000 million metric 
+       tons.
+    </h5></a>
+  </div>
+</div>
+<br>
+
+<div class="dropdown">
+<button class="dropbtn" type="button" onmouseover="showForm()">Contact<br>Senator</button>
+<form id="formElement" method="GET" style="display:none">
+  <label for="states"><h5><center>Choose your state:</center></h5></label>
+  <select name="states" id="state" value="value">
+    <option value="Alabama">Alabama</option>
+    <option value="Alaska">Alaska</option>
+    <option value="Arizona">Arizona</option>
+    <option value="Arkansas">Arkansas</option>
+    <option value="California">California</option>
+    <option value="Colorado">Colorado</option>
+    <option value="Connecticut">Connecticut</option>
+    <option value="Delaware">Delaware</option>
+    <option value="Florida">Florida</option>
+    <option value="Georgia">Georgia</option>
+    <option value="Hawaii">Hawaii</option>
+    <option value="Idaho">Idaho</option>
+    <option value="Illinois">Illinois</option>
+    <option value="Indiana">Indiana</option>
+    <option value="Iowa">Iowa</option>
+    <option value="Kansas">Kansas</option>
+    <option value="Kentucky">Kentucky</option>
+    <option value="Louisiana">Louisiana</option>
+    <option value="Maine">Maine</option>
+    <option value="Maryland">Maryland</option>
+    <option value="Massachusetts">Massachusetts</option>
+    <option value="Michigan">Michigan</option>
+    <option value="Minnesota">Minnesota</option>
+    <option value="Mississippi">Mississippi</option>
+    <option value="Missouri">Missouri</option>
+    <option value="Montana">Montana</option>
+    <option value="Nebraska">Nebraska</option>
+    <option value="Nevada">Nevada</option>
+    <option value="New Hampshire">New Hampshire</option>
+    <option value="New Jersey">New Jersey</option>
+    <option value="New Mexico">New Mexico</option>
+    <option value="New York">New York</option>
+    <option value="North Carolina">North Carolina</option>
+    <option value="North Dakota">North Dakota</option>
+    <option value="Ohio">Ohio</option>
+    <option value="Oklahoma">Oklahoma</option>
+    <option value="Oregon">Oregon</option>
+    <option value="Pennsylania">Pennsylvania</option>
+    <option value="Rhode Island">Rhode Island</option>
+    <option value="South Carolina">South Carolina</option>
+    <option value="South Dakota">South Dakota</option>
+    <option value="Tennessee">Tennessee</option>
+    <option value="Texas">Texas</option>
+    <option value="Utah">Utah</option>
+    <option value="Vermont">Vermont</option>
+    <option value="Virginia">Virginia</option>
+    <option value="Washington">Washington</option>
+    <option value="West Virginia">West Virginia</option>
+    <option value="Wisconsin">Wisconsin</option>
+  </select>
+  <br><br>
+  <button class= "dropbtn" type="button" onclick="getChoice()">Submit</button>
+</form>
+</div>
+
+</body>
+
+<script>
+  //values
+const state = ["Alaska","Alaska","Alabama","Alabama","Arkansas","Arkansas","Arizona","Arizona","California","California","Colorado","Colorado","Connecticut","Connecticut","Delaware","Delaware","Florida","Florida","Georgia","Georgia","Hawaii","Hawaii","Iowa","Iowa","Idaho","Idaho","Illinois","Illinois","Indiana","Indiana","Kansas","Kansas","Kentucky","Kentucky","Louisiana","Louisiana","Massachusetts","Massachusetts","Maryland","Maryland","Maine","Maine","Michigan","Michigan","Minnesota","Minnesota","Missouri","Missouri","Mississippi","Mississippi","Montana","Montana","North Carolina","North Carolina","North Dakota","North Dakota","Nebraska","Nebraska","New Hampshire","New Hampshire","New Jersey","New Jersey","New Mexico","New Mexico","Nevada","Nevada","New York","New York","Ohio","Ohio","Oklahoma","Oklahoma","Oregon","Oregon","Pennsylvania","Penesylvania","Rhode Island","Rhode Island","South Carolina","South Carolina","South Dakota","South Dakota","Tennessee","Tennessee","Texas","Texas","Utah","Utah","Virginia","Virginia","Vermont","Vermont","Washington","Washington","Wisconsin","Wisconsin","West Virginia","West Virginia"];
+const name = ["Lisa Murkowski","Dan Sullivan","Richard C. Shelby","Tommy Tuberville","John Boozman","Tom Cotton","Mark Kelly","Kyrsten Sinema","Dianne Feinstein","Alex Padilla","Michael F. Bennet","John W. Hickenlooper","Richard Blumenthal","Christopher Murphy","Thomas R. Carper","Christopher A. Coons","Marco Rubio","Rick Scott","Jon Ossoff","Raphael G. Warnock","Mazie K. Hirono","Brian Schatz","Joni Ernst","Chuck Grassley","Mike Crapo","James E. Risch","Tammy Duckworth","Richard J. Durbin","Mike Braun","Todd Young","Roger Marshall","Jerry Moran","Mitch McConnell","Rand Paul","Bill Cassidy","John Kennedy","Edward J. Markey","Elizabeth Warren","Benjamin L. Cardin","Chris Van Hollen","Susan M. Collins","Angus S. King Jr.","Gary C. Peters","Debbie Stabenow","Amy Klobuchar","Tina Smith","Roy Blunt","Josh Hawley","Cindy Hyde-Smith","Roger F. Wicker","Steve Daines","Jon Tester","Richard Burr","Thom Tillis","Kevin Cramer","John Hoeven","Deb Fischer","Ben Sasse","Maggie Hassan","Jeanne Shaheen","Cory A. Booker","Robert Menendez","Martin Heinrich","Ben Ray Lujan","Catherine Cortez Masto","Jacky Rosen","Kirsten Gillibrand","Charles E. Schumer","Sherrod Brown","Rob Portman","James M. Inhofe","James Lankford","Jeff Merkley","Ron Wyden","Robert P. Casey Jr.","Patrick J. Toomey","Jack Reed","Sheldon Whitehouse","Lindsey E. Graham","Tim Scott","Mike Rounds","John Thune","Marsha Blackburn","Bill Hagerty","John Cornyn","Ted Cruz","Mike Lee","Mitt Romney","Tim Kaine","Mark R. Warner","Patrick Leahy","Bernard Sanders","Maria Cantwell","Patty Murray","Tammy Baldwin","Ron Johnson","Shelley Moore Capito","Joe Manchin III"];
+const party = ["R","R","R","R","R","R","D","D","D","D","D","D","D","D","D","D","R","R","D","D","D","D","R","R","R","R","D","D","R","R","R","R","R","R","R","R","D","D","D","D","R","I","D","D","D","D","R","R","R","R","R","D","R","R","R","R","R","R","D","D","D","D","D","D","D","D","D","D","D","R","R","R","D","D","D","R","D","D","R","R","R","R","R","R","R","R","R","R","D","D","D","I","D","D","D","R","R","D"];
+const phone = ["(202) 224-6665","(202) 224-3004","(202) 224-5744","(202) 224-4124","(202) 224-4843","(202) 224-2353","(202) 224-2235","(202) 224-4521","(202) 224-3841","(202) 224-3553","(202) 224-5852","(202) 224-5941","(202) 224-2823","(202) 224-4041","(202) 224-2441","(202) 224-5042","(202) 224-3041","(202) 224-5274","(202) 224-3521","(202) 224-3643","(202) 224-6361","(202) 224-3934","(202) 224-3254","(202) 224-3744","(202) 224-6142","(202) 224-2752","(202) 224-2854","(202) 224-2152","(202) 224-4814","(202) 224-5623","(202) 224-4774","(202) 224-6521","(202) 224-2541","(202) 224-4343","(202) 224-5824","(202) 224-4623","(202) 224-2742","(202) 224-4543","(202) 224-4524","(202) 224-4654","(202) 224-2523","(202) 224-5344","(202) 224-6221","(202) 224-4822","(202) 224-3244","(202) 224-5641","(202) 224-5721","(202) 224-6154","(202) 224-5054","(202) 224-6253","(202) 224-2651","(202) 224-2644","(202) 224-3154","(202) 224-6342","(202) 224-2043","(202) 224-2551","(202) 224-6551","(202) 224-4224","(202) 224-3324","(202) 224-2841","(202) 224-3224","(202) 224-4744","(202) 224-5521","(202) 224-6621","(202) 224-3542","(202) 224-6244","(202) 224-4451","(202) 224-6542","(202) 224-2315","(202) 224-3353","(202) 224-4721","(202) 224-5754","(202) 224-3753","(202) 224-5244","(202) 224-6324","(202) 224-4254","(202) 224-4642","(202) 224-2921","(202) 224-5972","(202) 224-6121","(202) 224-5842","(202) 224-2321","(202) 224-3344","(202) 224-4944","(202) 224-2934","(202) 224-5922","(202) 224-5444","(202) 224-5251","(202) 224-4024","(202) 224-2023","(202) 224-4242","(202) 224-5141","(202) 224-3441","(202) 224-2621","(202) 224-5653","(202) 224-5323","(202) 224-6472","(202) 224-3954"];
+const website = ["https://www.murkowski.senate.gov/contact","https://www.sullivan.senate.gov/contact/email","https://www.shelby.senate.gov/public/index.cfm/emailsenatorshelby","https://www.tuberville.senate.gov/contact/","https://www.boozman.senate.gov/public/index.cfm/contact","https://www.cotton.senate.gov/contact","https://www.kelly.senate.gov/contact/","https://www.sinema.senate.gov/contact-kyrsten","https://www.feinstein.senate.gov/public/index.cfm/contact","https://www.padilla.senate.gov/contact/","https://www.bennet.senate.gov/public/index.cfm/contact","https://www.hickenlooper.senate.gov/email-john/","https://www.blumenthal.senate.gov/contact/write-to-senator-blumenthal","https://www.murphy.senate.gov/contact","https://www.carper.senate.gov/public/index.cfm/email-senator-carper","https://www.coons.senate.gov/contact","https://www.rubio.senate.gov/public/index.cfm/contact","https://www.rickscott.senate.gov/contact/contact","https://www.ossoff.senate.gov/contact-us/","https://www.warnock.senate.gov/contact/","https://www.hirono.senate.gov/contact","https://www.schatz.senate.gov/contact","https://www.ernst.senate.gov/contact","https://www.grassley.senate.gov/contact","https://www.crapo.senate.gov/contact/email-me","https://www.risch.senate.gov/public/index.cfm/email","https://www.duckworth.senate.gov/connect/email-tammy","https://www.durbin.senate.gov/contact/","https://www.braun.senate.gov/contact-mike","https://www.young.senate.gov/contact","https://www.marshall.senate.gov/contact/","https://www.moran.senate.gov/public/index.cfm/e-mail-jerry","https://www.mcconnell.senate.gov/public/index.cfm/contact","https://www.paul.senate.gov/connect/email-rand","https://www.cassidy.senate.gov/contact","https://www.kennedy.senate.gov/public/email-me","https://www.markey.senate.gov/contact","https://www.warren.senate.gov/contact","https://www.cardin.senate.gov/email-ben/","https://www.vanhollen.senate.gov/contact","https://www.collins.senate.gov/contact/email-senator-collins","https://www.king.senate.gov/contact-home","https://www.peters.senate.gov/contact/email-gary","https://www.stabenow.senate.gov/contact","https://www.klobuchar.senate.gov/public/index.cfm/contact","https://www.smith.senate.gov/share-your-opinion/","https://www.blunt.senate.gov/contact/contact-roy","https://www.hawley.senate.gov/contact-senator-hawley","https://www.hydesmith.senate.gov/contact-senator","https://www.wicker.senate.gov/contact","https://www.daines.senate.gov/services/email-steve/","https://www.tester.senate.gov/contact/","https://www.burr.senate.gov/","https://www.tillis.senate.gov/email-me","https://www.cramer.senate.gov/contact/contact-kevin","https://www.hoeven.senate.gov/contact","https://www.fischer.senate.gov/public/index.cfm/contact","https://www.sasse.senate.gov/public/index.cfm/email-ben","https://www.hassan.senate.gov/contact","https://www.shaheen.senate.gov/contact/contact-jeanne","https://www.booker.senate.gov/contact/write-to-cory","https://www.menendez.senate.gov/contact","https://www.heinrich.senate.gov/contact","https://www.lujan.senate.gov/contact/","https://www.cortezmasto.senate.gov/contact","https://www.rosen.senate.gov/email-jacky/","https://www.gillibrand.senate.gov/contact/email-me","https://www.schumer.senate.gov/contact/email-chuck","https://www.brown.senate.gov/contact","https://www.portman.senate.gov/meet/contact","https://www.inhofe.senate.gov/contact","https://www.lankford.senate.gov/contact/email","https://www.merkley.senate.gov/contact","https://www.wyden.senate.gov/contact","https://www.casey.senate.gov/contact/share","https://www.toomey.senate.gov/contact/email-senator-toomey","https://www.reed.senate.gov/contact","https://www.whitehouse.senate.gov/contact/email-sheldon","https://www.lgraham.senate.gov/public/index.cfm/e-mail-senator-graham","https://www.scott.senate.gov/contact/email-me","https://www.rounds.senate.gov/contact","https://www.thune.senate.gov/public/index.cfm/contact","https://www.blackburn.senate.gov/email-me","https://www.hagerty.senate.gov/email-me/","https://www.cornyn.senate.gov/contact","https://www.cruz.senate.gov/contact","https://www.lee.senate.gov/contact","https://www.romney.senate.gov/contact-senator-romney/","https://www.kaine.senate.gov/contact","https://www.warner.senate.gov/public/index.cfm/contact","https://www.leahy.senate.gov/contact","https://www.sanders.senate.gov/contact/","https://www.cantwell.senate.gov/contact/email/form","https://www.murray.senate.gov/write-to-patty/","https://www.baldwin.senate.gov/contact/contact-tammy","https://www.ronjohnson.senate.gov/email-the-senator","https://www.capito.senate.gov/contact/contact-landing","https://www.manchin.senate.gov/contact-joe",]
+
+//change letters to republican/democrat/independent
+for (i = 0; i < party.length; i++){
+  if (party[i] == "R"){
+    party[i] = "Republican";
+  }
+  if (party[i] == "D"){
+    party[i] = "Democrat";
+  }
+  else{
+    party[i] = "Independent";
+  }
+}
+
+var value = "empty"; // by default
+var array = [...Array(98)].map(e => Array(5).fill(value));
+
+for(i = 0; i < array.length; i++){
+    for (j = 0; j < array[i].length; j++){
+        if (j == 0){
+            array[i][j] = state[i];
+        }
+        if (j == 1){
+            array[i][j] = name[i];
+        }
+        if (j == 2){
+            array[i][j] = party[i];
+        }
+        if (j == 3){
+            array[i][j] = phone[i];
+        }
+        if (j == 4){
+            array[i][j] = website[i];
+        }
+
+    }
+}
+
+function getChoice() {
+  var choice = document.getElementById("state").value;
+  console.log(choice);
+   for(i = 0; i < array.length; i++){
+    if (array[i][0] == choice){
+      const send1 = array[i];
+      const send2 = array[i+1];
+      i = i + 1;
+      localStorage.setItem('info1', send1);
+      localStorage.setItem('info2', send2);
+      console.log(send1);
+      console.log(send2);
+      window.location.href = "state.html";
+    }
+   }
+
+}
+
+    function showForm() {
+      if (document.getElementById('formElement').style.display == 'block'){
+        document.getElementById('formElement').style.display = 'none';
+      }
+      else{
+        document.getElementById('formElement').style.display = 'block';
+      }
+    }
+</script>
+
+</html>
