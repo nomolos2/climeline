@@ -62,6 +62,50 @@ select {
   border-radius: 2px;
   background-color: #f1f1f1;
 }
+
+
+
+
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
 </style>
 </head>
 <body>
@@ -69,20 +113,20 @@ select {
 <div class="dropdown">
   <button class="dropbtn">Policy 1</button>
   <div class="dropdown-content">
-    <a href="https://www.nhtsa.gov/corporate-average-fuel-economy/safe" target ="_blank"> <h3>The Safer Affordable Fuel-Efficient (SAFE) Vehicles Rule</h3>
-      <h5><br>The Inflation Reduction Act aims to reduce the federal deficit, lower healthcare costs, and make the tax code fairer, while also 
-        reducing impacts from climate change. This bill includes $369 billion in funding for clean technology manufacturing facilities, 
-        energy research, carbon capture, climate-smart agriculture practices, and environmental justice initiatives. The National Highway
-         Traffic Safety Administration and Environmental Protection Agency issued the Safer Affordable Fuel-Efficient (SAFE) Vehicles 
-         Rule, which reduces the standards for greenhouse gas emissions for passenger cars and light trucks by 1.5% each year for model 
-         years 2021–2026.</h5></a>
+    <a href="https://www.nhtsa.gov/corporate-average-fuel-economy/safe" target ="_blank"> <h3>Safer Affordable Fuel-Efficient (SAFE) Vehicles Rule</h3>
+      <h5><br>The National Highway Traffic Safety Administration and Environmental Protection Agency issued the Safer Affordable 
+        Fuel-Efficient (SAFE) Vehicles Rule, proposing to amend existing Corporate Average Fuel Economy (CAFE) and tailpipe greenhouse 
+        gas emissions standards for passenger cars and light trucks by 1.5% each year for model years 2021–2026 and also increase 
+        stringency of GHG emission standards by 1.5% per year.</h5></a>
   </div>
 </div>
 <br>
 <div class="dropdown">
   <button class="dropbtn">Policy 2</button>
   <div class="dropdown-content">
-    <a href="https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwiNm5WXpuX6AhWApokEHQMrAoEQFnoECAgQAw&url=https%3A%2F%2Ftransportation.house.gov%2Fcommittee-activity%2Fissue%2Finfrastructure-investment-and-jobs-act&usg=AOvVaw08fe_yzAEji9yZUIa3jSV6" target="_blank"><h3>The Infrastructure Investment and Jobs Act</h3>
+    <a href="https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwiNm5WXpuX6AhWApokEHQMrAoEQFnoECAgQ
+    Aw&url=https%3A%2F%2Ftransportation.house.gov%2Fcommittee-activity%2Fissue%2Finfrastructure-investment-and-jobs-act&usg=AOvVaw08fe_y
+    zAEji9yZUIa3jSV6" target="_blank"><h3>The Infrastructure Investment and Jobs Act</h3>
       <h5><br>The Infrastructure Investment and Jobs Act plans to improve roads, bridges, transit, rail, ports, airports, broadband, and
        drinking water and wastewater infrastructure. It provides 15 billion dollars for electric vehicle charging and clean school buses
        and ferries, as well as hundreds of billions for improving public transportation, which will reduce carbon emissions from cars 
@@ -93,12 +137,12 @@ select {
 <div class="dropdown">
   <button class="dropbtn">Policy 3</button>
   <div class="dropdown-content">
-    <a href="https://www.eesi.org/articles/view/how-the-inflation-reduction-act-and-bipartisan-infrastructure-law-work-together-to-advance-climate-action" target="_blank"><h3>Inflation Reduction Act and Bipartisan Infrastructure Law</h3>
+    <a href="https://www.eesi.org/articles/view/how-the-inflation-reduction-act-and-bipartisan-infrastructure-law-work-together-to-
+    advance-climate-action" target="_blank"><h3>Inflation Reduction Act and Bipartisan Infrastructure Law</h3>
     <h5>The Inflation Reduction Act aims to reduce the federal deficit, lower healthcare costs, and make the tax code fairer, while also
        reducing impacts from climate change. This bill includes $369 billion in funding for clean technology manufacturing facilities, 
        energy research, carbon capture, climate-smart agriculture practices, and environmental justice initiatives. The bill’s climate 
-       provisions are projected to reduce the country’s carbon emissions by roughly 40% by 2030 by approximately 1,000 million metric 
-       tons.
+       provisions are projected to reduce the country’s carbon emissions by roughly 40% by 2030 (approximately 1,000 million metric tons).
     </h5></a>
   </div>
 </div>
@@ -160,9 +204,32 @@ select {
     <option value="Wisconsin">Wisconsin</option>
   </select>
   <br><br>
-  <button class= "dropbtn" type="button" onclick="getChoice()">Submit</button>
+
+  <button class= "dropbtn" id="myBtn" type="button" onclick="getChoice()">Submit</button>
+  <!-- onclick="getChoice()""-->
 </form>
 </div>
+
+ <!-- The Modal -->
+ <div id="myModal" class="modal">
+ 
+   <!-- Modal content -->
+   <div class="modal-content">
+     <span class="close">&times;</span>
+     <h1>Senators from <span id="state1"></span></h1>
+     <h3><span id="name1"></span></h3>
+     <h5>Party: <span id="party1"></span></h5>
+     <h5>Phone: <span id="phone1"></span></h5>
+     <button class="dropbtn" id="webpage1" onclick="goTo(1)">Website</button>
+     <br><br>
+     <h3><span id="name2"></span></h3>
+     <h5>Party: <span id="party2"></span></h5>
+     <h5>Phone: <span id="phone2"></span></h5>
+     <button class="dropbtn" id="webpage2" onclick="goTo(2)">Website</button>
+
+   </div>
+ 
+ </div> 
 
 </body>
 
@@ -176,14 +243,14 @@ const website = ["https://www.murkowski.senate.gov/contact","https://www.sulliva
 
 //change letters to republican/democrat/independent
 for (i = 0; i < party.length; i++){
-  if (party[i] == "R"){
-    party[i] = "Republican";
+  if (party[i] == "I"){
+    party[i] = "Independent";
   }
   if (party[i] == "D"){
     party[i] = "Democrat";
   }
-  else{
-    party[i] = "Independent";
+  if (party[i] == "R"){
+    party[i] = "Republican";
   }
 }
 
@@ -211,22 +278,43 @@ for(i = 0; i < array.length; i++){
     }
 }
 
-function getChoice() {
+function getChoice(){
+  modal.style.display = "block";
   var choice = document.getElementById("state").value;
-  console.log(choice);
+  var index = 0;
    for(i = 0; i < array.length; i++){
     if (array[i][0] == choice){
-      const send1 = array[i];
-      const send2 = array[i+1];
-      i = i + 1;
-      localStorage.setItem('info1', send1);
-      localStorage.setItem('info2', send2);
-      console.log(send1);
-      console.log(send2);
-      window.location.href = "state.html";
+      index = i;
+      i = array.length;
     }
    }
 
+  document.getElementById("state1").innerHTML = state[index];
+  document.getElementById("name1").innerHTML = name[index];
+  document.getElementById("name2").innerHTML = name[index + 1];
+  document.getElementById("party1").innerHTML = party[index];
+  document.getElementById("party2").innerHTML = party[index + 1];
+  document.getElementById("phone1").innerHTML = phone[index];
+  document.getElementById("phone2").innerHTML = phone[index + 1];
+}
+
+function goTo(num){
+  console.log("hi");
+  var choice = document.getElementById("state").value;
+  var index = 0;
+   for(i = 0; i < array.length; i++){
+    if (array[i][0] == choice){
+      index = i;
+      console.log(index);
+      i = array.length;
+    }
+   }
+  if (num == 1){
+    window.open(website[index], "_blank");
+  }
+  if (num == 2){
+    window.open(website[index + 1], "_blank");
+  }
 }
 
     function showForm() {
@@ -237,6 +325,31 @@ function getChoice() {
         document.getElementById('formElement').style.display = 'block';
       }
     }
+
+
+
+//Modal code
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
 </script>
 
 </html>
